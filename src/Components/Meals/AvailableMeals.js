@@ -1,6 +1,8 @@
 import React from "react";
+import { Card } from "../UI/Card";
 
 import styling from "./AvailableMeals.module.css";
+import MealItem from "./MealItems/MealItem";
 
 const DUMMY_MEALS = [
   {
@@ -30,13 +32,22 @@ const DUMMY_MEALS = [
 ];
 
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map(meal => <li>{meal.name}</li>);
+  const mealsList = DUMMY_MEALS.map((meal) => (
+    <MealItem
+      key={meal.id}
+      name={meal.name}
+      description={meal.description}
+      price={meal.price}
+      // or having something like
+      // meal={meal} ........ so that in the file accessing it, it will be props.meal.name, props.meal.price;
+    />
+  ));
 
   return (
     <section className={styling.meals}>
-      <ul>
-        {mealsList}
-      </ul>
+      <Card>
+        <ul>{mealsList}</ul>
+      </Card>
     </section>
   );
 };
