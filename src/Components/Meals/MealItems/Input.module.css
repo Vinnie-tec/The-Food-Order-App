@@ -12,7 +12,7 @@
 .input input {
   width: 3rem;
   border-radius: 5px;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(204, 204, 204);
   font: inherit;
   padding-left: 0.5rem;
 }
